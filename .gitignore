@@ -1,0 +1,17 @@
+# Build/Deploy artifacts
+dist_*/
+*_deploy/
+zip_test_extraction/
+*.zip
+
+# Backup/Archive
+archive/
+
+# Tool specific
+.gemini/
+.idea/
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,123 @@
+body {
+    padding-bottom: 70px !important;
+    /* Space for floating bar */
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-bottom: 60px !important;
+    }
+}
+
+/* Global Floating Bottom Button Bar */
+.floating-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: rgba(10, 10, 12, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 10px 0;
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    animation: slideUpFloating 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+@keyframes slideUpFloating {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.floating-bar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.floating-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: var(--text-dim, #C0C0C0);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 8px 5px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 250px;
+}
+
+.floating-item .icon-box {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.floating-item svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+}
+
+.floating-item .label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+}
+
+/* Hover & Active States */
+.floating-item:hover {
+    color: var(--gold, #D4AF37);
+    background-color: rgba(212, 175, 55, 0.05);
+}
+
+.floating-item:hover .icon-box {
+    transform: translateY(-3px);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .floating-bottom-bar {
+        padding: 8px 0;
+    }
+
+    .floating-bar-container {
+        gap: 5px;
+        padding: 0 10px;
+    }
+
+    .floating-item .label {
+        font-size: 0.75rem;
+        letter-spacing: -1px;
+    }
+
+    .floating-item .icon-box {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Landscape Mobile or very small screens */
+@media (max-width: 400px) {
+    .floating-item .label {
+        font-size: 0.7rem;
+    }
+}
